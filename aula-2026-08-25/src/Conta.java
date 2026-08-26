@@ -6,8 +6,13 @@ public class Conta {
     double limite;
 
     // construtor
-    public Conta(int num){
-        numero = num;
+    public Conta(int numero){
+        this.numero = numero;
+    }
+
+    public Conta(int num, String tit){
+        this.numero = num;
+        titular = tit;
     }
     // metodo = funcao pra exibir os dados
     /**
@@ -18,5 +23,23 @@ public class Conta {
         System.out.println("Titular: " + titular);
         System.out.println("Saldo: R$ " + saldo);
         System.out.println("Limite: R$ " + limite);
+    }
+
+    public void depositar(double valor){
+        if (valor>0){ 
+            this.saldo = this.saldo + valor;
+            System.out.println("Deposito realizado com sucesso");
+        }        
+    }
+
+    public void sacar(double valor){
+        if ((valor>0) && (valor <= this.saldo + this.limite)){
+            this.saldo = this.saldo - valor;
+            System.out.println("Saque realizado com sucesso");
+        } else if (valor <= 0){
+            System.out.println("Valor de saque invalido");
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
     }
 }

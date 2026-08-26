@@ -9,7 +9,7 @@ public class App {
 
     public static void main(String[] args) {
         Conta cc1 = new Conta(54);
-        Conta cc2 = new Conta(89);
+        Conta cc2 = new Conta(89, "Joao");
         System.out.println("--objeto cc1--");
         cc1.info();
         // info(cc1);
@@ -20,7 +20,7 @@ public class App {
         cc1.saldo = 1000.0;
         cc1.limite = 2000.0;
 
-        cc2.titular = "Joao";
+        // cc2.titular = "Joao";
         cc2.saldo = 1350.0;
         cc2.limite = 3000.0;
 
