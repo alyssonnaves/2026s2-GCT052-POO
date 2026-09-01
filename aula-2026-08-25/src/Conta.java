@@ -32,14 +32,17 @@ public class Conta {
         }        
     }
 
-    public void sacar(double valor){
+    public boolean sacar(double valor){
         if ((valor>0) && (valor <= this.saldo + this.limite)){
             this.saldo = this.saldo - valor;
-            System.out.println("Saque realizado com sucesso");
+            // System.out.println("Saque realizado com sucesso");
+            return true;
         } else if (valor <= 0){
-            System.out.println("Valor de saque invalido");
+            // System.out.println("Valor de saque invalido");
+            return false;
         } else {
-            System.out.println("Saldo insuficiente");
+            // System.out.println("Saldo insuficiente");
+            return false;
         }
     }
 }
