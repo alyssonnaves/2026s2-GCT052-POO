@@ -14,4 +14,51 @@ public class Exemplar {
         this.titulo = titulo;
         this.status = StatusExemplar.DISPONIVEL;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public StatusExemplar getStatus() {
+        return status;
+    }
+
+    public boolean isDisponivel() {
+        return status == StatusExemplar.DISPONIVEL;
+    }
+
+    public void emprestar() {
+        if (status == StatusExemplar.EMPRESTADO) {
+            throw new IllegalStateException("Exemplar ja emprestado.");
+        }
+        if (status == StatusExemplar.BLOQUEADO) {
+            throw new IllegalStateException("Exemplar bloqueado.");
+        }
+        status = StatusExemplar.EMPRESTADO;
+    }
+
+    public void devolver() {
+        if (status != StatusExemplar.EMPRESTADO) {
+            throw new IllegalStateException("Exemplar nao esta emprestado.");
+        }
+        status = StatusExemplar.DISPONIVEL;
+    }
+
+    public void bloquear() {
+        if (status == StatusExemplar.EMPRESTADO) {
+            throw new IllegalStateException("Nao bloqueie exemplar emprestado.");
+        }
+        status = StatusExemplar.BLOQUEADO;
+    }
+
+    public void desbloquear() {
+        if (status != StatusExemplar.BLOQUEADO) {
+            throw new IllegalStateException("Exemplar nao esta bloqueado.");
+        }
+        status = StatusExemplar.DISPONIVEL;
+    }
 }
