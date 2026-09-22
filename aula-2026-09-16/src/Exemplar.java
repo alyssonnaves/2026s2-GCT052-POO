@@ -45,6 +45,9 @@ public class Exemplar {
         if (status != StatusExemplar.EMPRESTADO) {
             throw new IllegalStateException("Exemplar nao esta emprestado.");
         }
+        if (status == StatusExemplar.BLOQUEADO) {
+            throw new IllegalStateException("Exemplar bloqueado.");
+        }
         status = StatusExemplar.DISPONIVEL;
     }
 
