@@ -5,7 +5,7 @@ class Professor extends Usuario {
 
     public Professor(String id, String nome, String email,
             String departamento) {
-        super(id, nome, email);
+        super(id, nome, email); // construtor da super classe
         if (departamento == null || departamento.isBlank())
             throw new IllegalArgumentException(" departamento ");
         this.departamento = departamento;
@@ -15,14 +15,16 @@ class Professor extends Usuario {
         return departamento;
     }
 
-    @Override
-    public int limiteEmprestimos() {
-        return 5; // regra diferente para professor
-    }
+   
 
     @Override
     public String toString() {
         return " Professor { " + super.toString() + " , dep = " +
                 departamento + " } ";
+    }
+
+    @Override
+    public int limiteEmprestimos() {
+        return 6;
     }
 }
