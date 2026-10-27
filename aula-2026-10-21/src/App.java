@@ -6,6 +6,7 @@ public class App {
         entrega = new EntregaExpressa(10);
         System.out.println(entrega.resumo(2));
 
-        
+        entrega = new EntregaRetirada(500);
+        System.out.println(entrega.resumo(6));        
     }
 }
