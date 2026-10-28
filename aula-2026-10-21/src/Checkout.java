@@ -14,6 +14,8 @@ public class Checkout {
             throw new IllegalArgumentException("Compra invalida");
         double frete = entrega.calcularFrete(pesoKg);
         double total = subtotal + frete;
+        System.out.println("Entrega via: " + entrega.getNome());
+        System.out.println("Pagamento via: " + pagamento.getNome());
         System.out.printf("Frete: R$ %.2f%n", frete);
         System.out.printf("Total: R$ %.2f%n", total);
         boolean aprovado = pagamento.autorizar(total);
