@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
 public class AppSet {
     public static void main(String[] args) {
-        Set<String> emails = new HashSet<>();
+        Set<String> emails = new LinkedHashSet<>();
         // List<String> emails = new ArrayList<>();
         emails.add("d@a.com.br"); // nao vou visualizar T ou F
         System.out.println(emails.add("a@a.com.br")); // T
