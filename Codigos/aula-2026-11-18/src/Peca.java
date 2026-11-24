@@ -14,9 +14,11 @@ public class Peca {
             throw new IllegalArgumentException("Valor incorreto");
         }
         if (quantidade > estoque){
-            throw new IllegalStateException("Quantidade insuficiente no estoque");
+            throw new EstoqueInsuficienteException("disponivel: " + estoque + " retirada: " + quantidade);
+            // throw new IllegalStateException("Quantidade insuficiente no estoque");
         }
         estoque -= quantidade;
+        System.out.println("Baixa realizada com sucesso");
     }
 }
 
